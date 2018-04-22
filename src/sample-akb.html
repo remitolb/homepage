@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<div class="page-content">
+    <div class="wrapper">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans">
+
+
+
+        <style>
+            .text {
+                font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+            }
+
+            hr {
+                display: block;
+                height: 1px;
+                border: 0;
+                border-top: 1px solid #ccc;
+                margin: 1em 0;
+                padding: 0;
+            }
+
+            #title {
+                margin-top: 6em;
+                border: none;
+                color: #7d7a7a;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 24px;
+                margin: 4px 2px;
+                font-weight: bold;
+                /* cursor: pointer; */
+            }
+
+            #sample {
+                margin-top: 6em;
+                background-color: #ffc5d3;
+                border: none;
+                color: #7d7a7a;
+                padding: 15px 0px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 20px;
+                margin: 4px 2px;
+                font-weight: bold;
+                margin-left: auto;
+                margin-right: auto;
+                cursor: pointer;
+            }
+
+            #sentence {
+                background-color: #fff4f7;
+                text-align: left;
+                font-size: 44px;
+                color: rgb(74, 74, 74);
+                /* width: 80%; */
+                margin-left: auto;
+                margin-right: auto;
+                min-height: 12em;
+            }
+        </style>
+
+        <p id="title" class="text"> 秋○康歌詞ジェネレーター </p>
+        <hr>
+        <p id="sample" class="text">アンコール</p>
+        <p id="sentence" class="text"></p>
+        <hr>
+
+        <script>
+            async function get_sample() {
+                var url = 'https://alantian.net/sample/akb'
+                var p = await fetch(url, {
+                    method: 'GET'
+                });
+                var o = await p.json();
+                console.log(o);
+
+                var sent = o.sent;
+                var sent = sent.split("\n").join( " ／ ");
+
+                document.querySelector("#sample").textContent = "アンコール";
+                document.querySelector("#sentence").textContent = sent;
+            }
+
+            function text_init() {
+                document.querySelector("#sample").textContent = "ただいま作成中...............";
+                document.querySelector("#sentence").textContent = "";
+            }
+
+            async function run() {
+                text_init();
+                get_sample();
+            }
+
+            document.addEventListener("DOMContentLoaded", run);
+            document.querySelector("#sample").onclick = run;
+        </script>
+
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
