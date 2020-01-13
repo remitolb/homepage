@@ -79,8 +79,7 @@
             async function get_sample() {
                 var url = 'https://api.alantian.net/sample/akb';
                 var p = await fetch(url, {
-                    method: 'GET',
-                    mode: 'no-cors'
+                    method: 'GET'
                 });
                 var o = await p.json();
                 console.log(o);
