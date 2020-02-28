@@ -8,6 +8,11 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 /**
  * Basic styling
  */
@@ -473,6 +478,12 @@ emph
 .emph {
     font-style: italic;
     color: #1a6666;
+}
+
+span.desc-content {
+    font-size: smaller;
+    color: #1a6666;
+    text-indent:1em;
 }
 
 /**
