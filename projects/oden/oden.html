@@ -12,7 +12,8 @@
 
 
 <body>
-
+<script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script src="./script.js"></script>
 <header class="site-header">
     <div class="wrapper">
         <a class="site-title" href="/">Chunqi Zhao</a>
@@ -45,8 +46,15 @@
             <h3>Figures</h3>
             <img src="./image.png" style="margin: auto;"></img>
             <h3>Video</h3>
-            <p>To appear</p>
-            
+            <div class="video-wrapper">
+                <iframe class="video" width="1120" height="630" src="https://www.youtube.com/embed/552bAWqzyY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3>Pre-print PDF</h3>
+            <div class="canvas-wrapper">
+                <a href="./oden_preprint.pdf">
+                    <canvas id="the-canvas" style="margin: 0 auto;"></canvas>
+                </a>
+            </div>
         </dev>
     </div>
 </div>
